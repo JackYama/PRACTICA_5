@@ -18,6 +18,7 @@ int main(){
 		scanf("%f", &temperatura[i]);
 
 
+
 }
 	
 	return 0;
