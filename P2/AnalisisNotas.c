@@ -3,7 +3,7 @@
 //Author Jacob Navarro and David Castejon
 
 // primero entendemos que estamos hablando de notas por lo que lo primero para separar entre suspenso o aprobado definimos que la nota minima de aprobado es "5.0"
-#define Nota_min 5.0
+#define MIN_NOTA 5.0
 
 //definimos la estructura del estudiante y lo que define dentro
 struct Estudiante{
@@ -43,5 +43,26 @@ double suma = 0.0;  // Variable para almacenar la suma de las notas
 	double promedio = suma / num_estudiantes;  // Calculamos el promedio
 		printf("Promedio de notas: %.2f\n", promedio);  // Mostramos el promedio con 2 decimales
 	
-	return 0;
-} 
+	//ahora lo proximo que queremos es saber el numero de aprobados y suspendidos                                          
+	int aprobados = 0, suspendidos = 0;
+    for (int i = 0; i < num_estudiantes; i++) {
+            if (estudiantes[i].nota >= MIN_NOTA) {
+	            aprobados++;
+	        } else {
+	                suspendidos++;
+	        }
+    }
+     printf("Número de estudiantes aprobados: %d\n", aprobados);
+     printf("Número de estudiantes suspendidos: %d\n", suspendidos);
+     
+     //Calculo de las notas por encima del promedio
+          printf("Notas por encima del promedio (%.2f):\n", promedio);
+          for (int i = 0; i < num_estudiantes; i++){
+                  if (estudiantes[i].nota > promedio){
+			printf("Estudiante en la posición %d: %.2f\n", estudiantes[i].id, estudiantes[i].nota);
+             }
+     }
+                                                 
+    
+          return 0;
+    } 
