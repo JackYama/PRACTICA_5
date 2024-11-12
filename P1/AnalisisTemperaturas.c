@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 
 //Autor:Jacob Navarro Llamazares,David Castejón García
 
